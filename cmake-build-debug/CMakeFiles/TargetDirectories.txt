@@ -1,0 +1,3 @@
+/Users/ishita/Desktop/CLION/path_vis/cmake-build-debug/CMakeFiles/path_vis.dir
+/Users/ishita/Desktop/CLION/path_vis/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ishita/Desktop/CLION/path_vis/cmake-build-debug/CMakeFiles/rebuild_cache.dir

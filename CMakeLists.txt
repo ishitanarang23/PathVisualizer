@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.17)
+project(path_vis)
+
+set(CMAKE_CXX_STANDARD 14)
+
+# Find SDL2
+find_package(SDL2 REQUIRED)
+message(STATUS "SDL2 include dirs: ${SDL2_INCLUDE_DIRS}")
+message(STATUS "SDL2 libraries: ${SDL2_LIBRARIES}")
+
+# Find SDL2_ttf
+find_package(SDL2_ttf REQUIRED)
+message(STATUS "SDL2_ttf include dirs: ${SDL2_TTF_INCLUDE_DIRS}")
+message(STATUS "SDL2_ttf libraries: ${SDL2_TTF_LIBRARIES}")
+
+# Explicitly specify SDL2_ttf include and library directories
+include_directories(${SDL2_TTF_INCLUDE_DIRS})
+link_directories(${SDL2_TTF_LIBRARY_DIRS})
+
+add_executable(path_vis main.cpp)
+
+# Include SDL2 and SDL2_ttf directories
+target_include_directories(path_vis PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
+
+# Link SDL2 and SDL2_ttf libraries
+target_link_libraries(path_vis PRIVATE ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES})
