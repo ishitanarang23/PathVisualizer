@@ -17,7 +17,7 @@ message(STATUS "SDL2_ttf libraries: ${SDL2_TTF_LIBRARIES}")
 include_directories(${SDL2_TTF_INCLUDE_DIRS})
 link_directories(${SDL2_TTF_LIBRARY_DIRS})
 
-add_executable(path_vis main.cpp)
+add_executable(path_vis main.cpp Paths.cpp Paths.h)
 
 # Include SDL2 and SDL2_ttf directories
 target_include_directories(path_vis PRIVATE ${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
