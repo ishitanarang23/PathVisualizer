@@ -474,14 +474,6 @@ bool initSDL() {
     return true;
 }
 
-// Function to close SDL
-void closeSDL() {
-    SDL_DestroyRenderer(gRenderer);
-    SDL_DestroyWindow(gWindow);
-    SDL_Quit();
-}
-
-
 // Main function
 int main() {
     if (!initSDL()) {
