@@ -27,7 +27,7 @@ SDL_Window* gWindow = nullptr;
 SDL_Renderer* gRenderer = nullptr;
 
 // Pair of integers to represent a cell (x, y)
-using CellPair = std::pair<int, int>;
+using CellPair = pair<int, int>;
 
 
 struct Grid {
@@ -59,7 +59,7 @@ struct Grid {
 
     // Constructor
     Grid(int w, int h, int cellSize) : width(w), height(h), cellSize(cellSize), startCell({-1, -1}), endCell({-1, -1}) {
-        data.resize(height, std::vector<int>(width, 0));
+        data.resize(height, vector<int>(width, 0));
     }
     void setColorForCell(CellPair cell, int color) {
         rectColor[cell] = color;
@@ -454,20 +454,20 @@ struct Grid {
 // Initialization function
 bool initSDL() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        std::cerr << "SDL initialization failed: " << SDL_GetError() << std::endl;
+        cerr << "SDL initialization failed: " << SDL_GetError() << std::endl;
         return false;
     }
 
     gWindow = SDL_CreateWindow("Path Visualizer", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
                                SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     if (gWindow == nullptr) {
-        std::cerr << "Window creation failed: " << SDL_GetError() << std::endl;
+        cerr << "Window creation failed: " << SDL_GetError() << std::endl;
         return false;
     }
 
     gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
     if (gRenderer == nullptr) {
-        std::cerr << "Renderer creation failed: " << SDL_GetError() << std::endl;
+        cerr << "Renderer creation failed: " << SDL_GetError() << std::endl;
         return false;
     }
 
